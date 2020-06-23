@@ -6,17 +6,14 @@ import com.slavetny.cryptocurrencyrate.data.repository.CoinRepository
 import com.slavetny.cryptocurrencyrate.domain.model.Coin
 import com.slavetny.cryptocurrencyrate.presentation.base.BaseViewModel
 
-class CryptocurrencyViewModel : BaseViewModel() {
+class CryptocurrencyViewModel(
+    coinRepository: CoinRepository
+) : BaseViewModel() {
 
-    private var coinList: MutableLiveData<Coin> = MutableLiveData()
-    private val coinRepository: CoinRepository
+    private var _coinList: MutableLiveData<Coin> = MutableLiveData()
+    val coinList: LiveData<Coin> get() = _coinList
 
     init {
-        coinRepository = CoinRepository().getInstance()
-        coinList = coinRepository.getCoinList()
-    }
-
-    fun getCoinList() : LiveData<Coin> {
-        return coinList
+        _coinList = coinRepository.getCoinList()
     }
 }

@@ -3,7 +3,7 @@ package com.slavetny.cryptocurrencyrate.presentation.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.slavetny.cryptocurrencyrate.R
-import com.slavetny.cryptocurrencyrate.data.utils.inflate
+import com.slavetny.cryptocurrencyrate.data.extension.inflate
 import com.slavetny.cryptocurrencyrate.domain.model.Coin
 
 class CryptocurrencyAdapter(var coin: Coin) : RecyclerView.Adapter<CryptocurrencyViewHolder>() {

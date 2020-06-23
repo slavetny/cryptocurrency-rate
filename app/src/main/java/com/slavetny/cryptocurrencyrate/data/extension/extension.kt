@@ -1,4 +1,4 @@
-package com.slavetny.cryptocurrencyrate.data.utils
+package com.slavetny.cryptocurrencyrate.data.extension
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
