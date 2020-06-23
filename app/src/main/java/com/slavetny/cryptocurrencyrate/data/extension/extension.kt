@@ -2,10 +2,13 @@ package com.slavetny.cryptocurrencyrate.data.extension
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.slavetny.cryptocurrencyrate.R
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 
 fun ViewGroup.inflate(layoutRes: Int) =
     LayoutInflater.from(context).inflate(layoutRes,this, false)
+
+inline fun <T> LiveData<T>.observeNotNull(owner: LifecycleOwner, crossinline observer: (T) -> Unit) {
+    observe(owner, Observer { it?.let { observer.invoke(it) } })
+}
