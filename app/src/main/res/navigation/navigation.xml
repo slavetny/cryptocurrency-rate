@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/cryptocurrencyFragment">
+
+    <fragment
+        android:id="@+id/cryptocurrencyFragment"
+        android:name="com.slavetny.cryptocurrencyrate.presentation.screen.cryptocurrency.CryptocurrencyFragment"
+        android:label="CryptocurrencyFragment"
+        tools:layout="@layout/fragment_cryptocurrency">
+
+        <action
+            android:id="@+id/action_cryptocurrencyFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.slavetny.cryptocurrencyrate.presentation.screen.about.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about"/>
+
+</navigation>
